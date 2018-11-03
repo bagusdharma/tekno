@@ -11,14 +11,23 @@
 |
 */
 
-Route::get('/home', function () {
-    return view('home.index');
-});
+// Route::get('/home', function () {
+//     return view('home');
+// });
+
+// Route::get('/chat', function() {
+// 	return view('chat.index');
+// });
+
+// Route::get('/profile', function() {
+// 	return view('profile.index');
+// });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('/chat', 'ChatsController@index');
+Route::resource('/chat', 'ChatsController');
+Route::resource('/profile', 'ProfileController');
 Route::get('messages', 'ChatsController@fetchMessages');
 Route::post('messages', 'ChatsController@sendMessage');
+
