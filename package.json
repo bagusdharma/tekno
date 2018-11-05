@@ -17,6 +17,11 @@
         "laravel-mix": "^2.0",
         "lodash": "^4.17.5",
         "popper.js": "^1.12",
+        "semantic-ui": "^2.4.2",
+        "semantic-ui-css": "^2.4.1",
         "vue": "^2.5.7"
+    },
+    "dependencies": {
+        "laravel-echo": "^1.4.1"
     }
 }
