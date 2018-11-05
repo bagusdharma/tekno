@@ -10,4 +10,8 @@ class ProfileController extends Controller
     {
         return view('profile.index');
     }
+
+    public function show($id){
+    	return view('profile.index');
+    }
 }
