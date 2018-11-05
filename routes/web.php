@@ -26,6 +26,9 @@
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', function(){
+	return redirect()->route('home');
+});
 Route::resource('/chat', 'ChatsController');
 Route::resource('/profile', 'ProfileController');
 Route::get('messages', 'ChatsController@fetchMessages');
