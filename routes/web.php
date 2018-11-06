@@ -30,7 +30,8 @@ Route::get('/', function(){
 	return redirect()->route('home');
 });
 Route::resource('/chat', 'ChatsController');
-Route::resource('/profile', 'ProfileController');
+Route::get('/profile', 'ProfileController@showProfile')->name('showProfile');
+Route::resource('/printing', 'ProfileController');
 Route::get('messages', 'ChatsController@fetchMessages');
 Route::post('messages', 'ChatsController@sendMessage');
 

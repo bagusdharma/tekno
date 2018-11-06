@@ -1,7 +1,7 @@
 @extends ('master')
 
 @section ('content')
-<div class="ui stackable grid container">
+<div class="ui doubling grid container">
     <div class="three column row">
         <div class="ui column">
             <div class="ui segment item">
@@ -17,7 +17,7 @@
                                 Lokasi di <b>Sukolilo Dian Regency</b>
                             </div>
                         </h2>
-                        <a href="{{ route('profile.show', 0) }}"><div class="ui blue right floated button">
+                        <a href="{{ route('printing.show', 0) }}"><div class="ui blue right floated button">
                             See Printing Profile
                         </div></a>
                     </div>
@@ -38,7 +38,7 @@
                                 Lokasi di <b>Arif Rahman Hakim</b>
                             </div>
                         </h2>
-                        <a href="{{ route('profile.show', 0) }}"><div class="ui blue right floated button">
+                        <a href="{{ route('printing.show', 0) }}"><div class="ui blue right floated button">
                             See Printing Profile
                         </div></a>
                     </div>
@@ -59,7 +59,7 @@
                                 Lokasi di <b>Keputih Perintis</b>
                             </div>
                         </h2>
-                        <a href="{{ route('profile.show', 0) }}"><div class="ui blue right floated button">
+                        <a href="{{ route('printing.show', 0) }}"><div class="ui blue right floated button">
                             See Printing Profile
                         </div></a>
                     </div>
@@ -82,7 +82,7 @@
                                 Lokasi di <b>Keputih Gg. 3</b>
                             </div>
                         </h2>
-                        <a href="{{ route('profile.show', 0) }}"><div class="ui blue right floated button">
+                        <a href="{{ route('printing.show', 0) }}"><div class="ui blue right floated button">
                             See Printing Profile
                         </div></a>
                     </div>
@@ -103,7 +103,7 @@
                                 Lokasi di <b>Sebelah Galaxy Mall</b>
                             </div>
                         </h2>
-                        <a href="{{ route('profile.show', 0) }}"><div class="ui blue right floated button">
+                        <a href="{{ route('printing.show', 0) }}"><div class="ui blue right floated button">
                             See Printing Profile
                         </div></a>
                     </div>
@@ -124,7 +124,7 @@
                                 Lokasi di <b>dekat SAC ITS</b>
                             </div>
                         </h2>
-                        <a href="{{ route('profile.show', 0) }}"><div class="ui blue right floated button">
+                        <a href="{{ route('printing.show', 0) }}"><div class="ui blue right floated button">
                             See Printing Profile
                         </div></a>
                     </div>
