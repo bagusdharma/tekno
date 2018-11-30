@@ -108,6 +108,16 @@
             </div>
         </div>
     </div>
+
+    <div class="ui three column grid container">
+    <div class="column">
+    </div>
+    <div class="column">
+    <input type="submit" class="ui green button" value="Order Now" tabindex="0">
+    </div>
+    <div class="column">
+    </div>
+    </div>
  
         <style type="text/css">
         .slider {
