@@ -30,7 +30,14 @@ Route::get('/', function(){
 	return redirect()->route('home');
 });
 Route::resource('/chat', 'ChatsController');
-Route::resource('/profile', 'ProfileController');
+
+// User Things
+Route::get('/profile', 'ProfileController@showProfile')->name('showProfile');
+Route::get('/upgrade', 'ProfileController@upgrade')->name('upgradeProfile');
+Route::post('/upgrade', 'ProfileController@upgrade');
+Route::patch('/profile/{user}/update', ['as' => 'updateProfile', 'uses' => 'ProfileController@update']);
+
+Route::resource('/printing', 'ProfileController');
 Route::get('messages', 'ChatsController@fetchMessages');
 Route::post('messages', 'ChatsController@sendMessage');
 
