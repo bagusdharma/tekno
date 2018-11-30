@@ -14,6 +14,7 @@ class AddedColumnForUserTable extends Migration
     public function up()
     {
         Schema::table('users', function($table){
+            $table->text('description')->nullable();
             $table->string('alamat')->nullable();
             $table->string('kecamatan', 3)->nullable();
         });

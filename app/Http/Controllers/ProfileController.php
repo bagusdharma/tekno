@@ -103,6 +103,16 @@ class ProfileController extends Controller
         //
     }
 
+    public function upgrade(Request $request){
+        $user = \Auth::user();
+        if ($request->isMethod('post')){
+
+        }
+        else if($request->isMethod('get')){
+            return view('upgrade')->with('user', $user);
+        }
+    }
+
     public function showProfile(){
         $user = \Auth::user();
         return view('profile.userprofile')->with('user', $user);

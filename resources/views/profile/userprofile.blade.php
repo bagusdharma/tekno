@@ -9,7 +9,7 @@
             <div class="ui message">
                 <div class="header">Punya Bisnis Printing?</div>
                 <p>Anda pemilik bisnis printing? Upgrade akun anda menjadi akun Toko Printing sekarang!</p>
-                <a href="#"><div class="ui button red">Upgrade Akun</div></a>
+                <a href="{{ route('upgradeProfile') }}"><div class="ui button red">Upgrade Akun</div></a>
             </div>
         </div>
     <h4 class="ui dividing header">Profil {{ $user->name }}</h4>
