@@ -40,4 +40,4 @@ Route::patch('/profile/{user}/update', ['as' => 'updateProfile', 'uses' => 'Prof
 Route::resource('/printing', 'ProfileController');
 Route::get('messages', 'ChatsController@fetchMessages');
 Route::post('messages', 'ChatsController@sendMessage');
-
+Route::resource('/order', 'OrderController');
