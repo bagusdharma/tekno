@@ -114,6 +114,7 @@
     </div>
 </div>
 
+@role('personal')
 <div class="ui three column grid container">
     <div class="column">
     </div>
@@ -123,6 +124,7 @@
     <div class="column">
     </div>
 </div>
+@endrole
 
 <style type="text/css">
     .slider {
