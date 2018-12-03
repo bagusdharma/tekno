@@ -2,7 +2,8 @@
 
 @section('content')
 <div class="ui segment">
-    <form action="" class="ui form" method="post">
+    <form action="{{ route('order.store') }}" class="ui form" method="post">
+        @csrf
         <h3 class="ui dividing header">Order Printing</h3>
         <div class="field">
             <input type="hidden" name="to_user" value="{{ $printing }}">
@@ -14,11 +15,13 @@
             </div>
             <div class="required field">
                 <label>Jenis Kertas</label>
+                <input type="hidden" name="jenis_kertas" value="" id="hiddenJenis">
                 <div class="six wide field">
-                    <select name="jenis_kertas" class="ui search dropdown" id="kertas">
+                    <select name="total_harga" class="ui search dropdown" id="kertas">
                         <option value="">Pilih Jenis Kertas</option>
                         @foreach($lists as $ls)
-                        <option value="{{ $ls->id }}">{{ $ls->ukuran }}</option>
+                        <option value="{{ $ls->berwarna }}">{{ $ls->ukuran }} - Berwarna</option>
+                        <option value="{{ $ls->bnw }}">{{ $ls->ukuran }} - Hitam Putih</option>
                         @endforeach
                     </select>
                 </div>
@@ -40,12 +43,12 @@
                 <label>Upload Dokumen</label>
                 <div class="six wide field">
                     <input type="hidden" name="file" value="" id="uploadedfile">
-                    <button type="button" class="ui button" onclick="upload();">Upload Dokumen</button>
+                    <button type="button" class="ui button" onclick="upload();" id="tblPopout">Upload Dokumen</button>
                 </div>
             </div>
 
             <div class="field">
-                <button type="button" class="ui primary button">Submit</button>
+                <button type="submit" class="ui primary button">Submit</button>
             </div>
         </div>
         <br>
@@ -75,15 +78,42 @@
     </form>
 </div>
 
+@if(!empty(Session::get('message')))
+<div class="ui mini modal" id="message">
+    <div class="header">Berhasil!</div>
+    <div class="content">
+        <p>{{ Session::get('message') }}</p>
+    </div>
+    <div class="actions">
+        <div class="ui green ok inverted button">
+            <i class="checkmark icon"></i>Ok
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function() {
+        $('#message').modal('show');
+    });
+</script>
+@endif
 
 @endsection
 
 @section('script')
 <script src="http://malsup.github.com/jquery.form.js"></script>
 <script>
-    $('#kertas').dropdown();
+    // $('#kertas').dropdown();
 
     $(document).ready(function() {
+        $('#message').modal();
+        $('#kertas').dropdown({
+            onChange: function(value, text, $choice){
+                $('#hiddenJenis').val(text);
+                console.log(text);
+            }
+        });
+
         $('.main.menu  .ui.dropdown').dropdown({
                 on: 'hover'
         });
@@ -94,57 +124,22 @@
         });
 
         var options = { 
-            // success: function(s){
-            //     console.log(s.responseJSON)
-            //     // $('#uploadedfile').val(s.responseJSON.id);
-            // },
             complete: function(response) {
                 if($.isEmptyObject(response.responseJSON.error)){
                     $('#uploadedfile').val(response.responseJSON.id);
+                    $('.ui.modal').modal('hide');
+                    $('#tblPopout').prop('disabled', true);
+                    $('#tblPopout').text('Document Uploaded, Dont Refresh This Page');
                 }
             }
         };
 
-        // $('#upfile').submit(function(e){
-        //     e.preventDefault();
-        //     // console.log('ahaa');
-        //     var formData = new FormData($(this)[0]);
-        //     $.ajax({
-        //         headers: { 'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content') },
-        //         data: formData,
-        //         type: 'post',
-        //         async: false,
-        //         processData: false,
-        //         contentType: false,
-        //         success:function(response){
-        //             // console.log(response);
-        //             alert('uploaded');
-        //         }
-        //     });
-        // });
-
     });
 
     const upload = () => {
-        $('.ui.modal').modal({
-            onDeny: function () {
-                $('#doc').attr('src', '/img/blank.png');
-            },
-            onApprove: function () {
-
-            }
-        }).modal('show');
+        $('.ui.modal').modal().modal('show');
     };
 
-    const readDoc = (input) => {
-        if (input.file && input.files[0]) {
-            var doc = new FileReader();
-            doc.onload = function (e) {
-                $('#doc').attr('src', e.target.result);
-            };
-            doc.readAsDataUrl(input.files[0]);
-        }
-    };
 </script>
 
 @endsection
