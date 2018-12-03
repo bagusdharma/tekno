@@ -4,21 +4,13 @@
     		<img class="logo" src="/img/lembar2.jpg">Lembar Surabaya
     	</a>
         @auth
-    	<a href="{{ route('showProfile') }}" class="item">Profile</a>
-    	<a href="{{ route('chat.index') }}" class="item">Messages</a>
+    	<a href="alamatchat ntar ae cuk aku berangkat sby dulu" class="item">Messages</a>
         @endauth
-    	<div class="ui category search right floated item">
-            <div class="ui icon input">
-                <input class="prompt" type="text" placeholder="Enter keywords...">
-                <i class="search icon"></i>
-            </div>
-            <div class="results"></div>
-        </div>
         @auth
         <div class="ui right floated dropdown item">
             User Settings<i class="dropdown icon"></i>
             <div class="menu">
-                <a class="item">Edit Profile</a>
+                <a href="{{ route('showProfile') }}" class="item">Profile</a>
                 @role('personal')
                 <a class="item">Printing Progress</a>
                 @endrole
@@ -45,3 +37,22 @@
         @endguest
     </div>
 </div>
+
+{{-- 
+<div class="ui modal" id="chats">
+    <div class="header">Messages</div>
+    <div class="content">
+        <div class="scrolling content">a</div>
+        <div class="description">
+            <div class="scrolling content">b</div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $('#chats').modal();
+    const showChats = () =>{
+        $('#chats').modal('show');
+    }
+</script>
+ --}}
