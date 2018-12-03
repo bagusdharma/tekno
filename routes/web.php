@@ -37,7 +37,9 @@ Route::get('/upgrade', 'ProfileController@upgrade')->name('upgradeProfile');
 Route::post('/upgrade', 'ProfileController@upgrade');
 Route::patch('/profile/{user}/update', ['as' => 'updateProfile', 'uses' => 'ProfileController@update']);
 
+// Profile printing only
 Route::resource('/printing', 'ProfileController');
+
 Route::get('messages', 'ChatsController@fetchMessages');
 Route::post('messages', 'ChatsController@sendMessage');
 Route::resource('/order', 'OrderController');

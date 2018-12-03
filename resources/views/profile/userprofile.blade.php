@@ -102,6 +102,15 @@
                     </select>
                 </div>
             </div>
+            @role('printing')
+            <br>
+            <div class="field">
+                <label>Koordinat Google Maps</label>
+                <div class="twelve wide field">
+                    <textarea rows="4" type="text" name="gmaps_location" placeholder="Koordinat Google Maps">{{ $user->gmaps_location }}</textarea>
+                </div>
+            </div>
+            @endrole
             <br>
             <div class="field">
                 <label>Password</label>

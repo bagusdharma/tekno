@@ -52,7 +52,8 @@ class ProfileController extends Controller
      */
     public function show($id)
     {
-        return view('profile.index');
+        $user = User::find($id)->toArray();
+        return view('profile.toko')->with('user', $user);
     }
 
     /**
