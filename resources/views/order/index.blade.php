@@ -27,6 +27,17 @@
                 </div>
             </div>
             <div class="required field">
+                <label>Jenis Pengambilan</label>
+                <div class="six wide field">
+                    <select name="kertas" class="ui search dropdown" id="kertas">
+                        <option value="">Pilih Jenis Pengambilan </option>
+                        <option value="pickup">Ambil Langsung</option>
+                        <option value="delivery">Delivery</option>
+                        
+                    </select>
+                </div>
+            </div>
+            <div class="required field">
                 <label>Alamat Pengiriman</label>
                 <div class="six wide field">
                     <input type="text" name="alamat" placeholder="Alamat Pengiriman">
