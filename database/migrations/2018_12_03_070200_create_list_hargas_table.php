@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePrintingsTable extends Migration
+class CreateListHargasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,15 @@ class CreatePrintingsTable extends Migration
      */
     public function up()
     {
-        Schema::create('printings', function (Blueprint $table) {
+        Schema::create('list_hargas', function (Blueprint $table) {
             $table->increments('id');
-            // printing logo path?
-            $table->string('name');
-            $table->string('desc');
-            $table->string('v_location');
-            $table->string('gmaps_location');
-            // Relation to showcase images?
-            // review?
-            // harga?
+            $table->unsignedInteger('toko')->index();
+            $table->string('ukuran');
+            $table->string('berwarna');
+            $table->string('bnw');
             $table->timestamps();
+
+            $table->foreign('toko')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
@@ -34,6 +32,6 @@ class CreatePrintingsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('printings');
+        Schema::dropIfExists('list_hargas');
     }
 }

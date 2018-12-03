@@ -102,6 +102,15 @@
                     </select>
                 </div>
             </div>
+            @role('printing')
+            <br>
+            <div class="field">
+                <label>Koordinat Google Maps</label>
+                <div class="twelve wide field">
+                    <textarea rows="4" type="text" name="gmaps_location" placeholder="Koordinat Google Maps">{{ $user->gmaps_location }}</textarea>
+                </div>
+            </div>
+            @endrole
             <br>
             <div class="field">
                 <label>Password</label>
@@ -118,7 +127,12 @@
                 <div class="column">
                 </div>
                 <div class="column">
-                    <button type="button" class="ui centered button" onclick="lala();">Upload Image</button>
+                    <button type="button" class="ui button" onclick="lala();">Upload Image</button>
+                    @role('printing')
+                    <br>
+                    <br>
+                    <a href="{{ route('harga.index') }}"><input type="button" value="Update Harga" class="ui green button"></a>
+                    @endrole('printing')
                 </div>
             </div>
         </div>

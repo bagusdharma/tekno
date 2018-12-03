@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Printing extends Model
+class ListHarga extends Model
 {
     //
 }

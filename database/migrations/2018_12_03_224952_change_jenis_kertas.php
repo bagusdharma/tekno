@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddedColumnForUserTable extends Migration
+class ChangeJenisKertas extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,8 @@ class AddedColumnForUserTable extends Migration
      */
     public function up()
     {
-        Schema::table('users', function($table){
-            $table->text('description')->nullable();
-            $table->string('alamat')->nullable();
-            $table->string('kecamatan', 3)->nullable();
-            $table->string('v_location')->nullable();
-            $table->string('gmaps_location')->nullable();
+        Schema::table('orders', function($table){
+            $table->string('jenis_kertas')->change();
         });
     }
 
