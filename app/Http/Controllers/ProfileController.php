@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use jeremykenedy\LaravelRoles\Models\Role;
 
 class ProfileController extends Controller
 {
@@ -74,22 +75,23 @@ class ProfileController extends Controller
      */
     public function update(User $user)
     {
-        // $this->validate(request(), [
-        //     'name' => 'required',
-        //     'email' => 'required|email|unique:users',
-        //     'kecamatan' => 'max:2',
-        //     'password' => 'required|min:6|confirmed'
-        // ]);
+        $desc = request('description');
 
         $user->name = request('name');
         $user->email = request('email');
+        if( isset($desc) ){
+            $user->description = request('description');
+        }
+        else {
+            $user->description = NULL;
+        }
         $user->alamat = request('alamat');
         $user->kecamatan = request('kecamatan');
         $user->password = bcrypt(request('password'));
 
         $user->save();
 
-        return $user;
+        return back()->with('message', 'Profil tersimpan!');
     }
 
     /**
@@ -106,7 +108,11 @@ class ProfileController extends Controller
     public function upgrade(Request $request){
         $user = \Auth::user();
         if ($request->isMethod('post')){
-
+            $role = Role::where('slug', '=', 'Printing')->first();
+            $user->detachAllRoles();
+            $user->attachRole($role);
+            return redirect()->route('showProfile')->with('message', 'Profil berhasil diupgrade!');
+            // print($user);
         }
         else if($request->isMethod('get')){
             return view('upgrade')->with('user', $user);
