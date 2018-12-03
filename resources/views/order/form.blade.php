@@ -88,21 +88,21 @@
                 on: 'hover'
         });
 
-        $('#uploadfile').on("click", function(e){
-            e.preventDefault();
-            $(this).parents("#upfile").ajaxForm(options);
+        $('#upfile').submit(function(){
+            $(this).ajaxSubmit(options);
+            return false;
         });
 
         var options = { 
-            success: function(s){
-                console.log(s.responseJSON.id)
-                $('#uploadedfile').val(s.responseJSON.id);
-            },
-            // complete: function(response) {
-            //     if($.isEmptyObject(response.responseJSON.error)){
-            //         $('#uploadedfile').val(response.responseJSON.id);
-            //     }
-            // }
+            // success: function(s){
+            //     console.log(s.responseJSON)
+            //     // $('#uploadedfile').val(s.responseJSON.id);
+            // },
+            complete: function(response) {
+                if($.isEmptyObject(response.responseJSON.error)){
+                    $('#uploadedfile').val(response.responseJSON.id);
+                }
+            }
         };
 
         // $('#upfile').submit(function(e){
