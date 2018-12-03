@@ -24,8 +24,8 @@
                 </div>
             </div>
         </div>
-        @endforeach
 
+        @endforeach
     </div>
 
     <div class="one column row">
