@@ -15,4 +15,14 @@ class FileController extends Controller
     //         'title' = '';
     //     ])
     // }
+
+    public function post(Request $req){
+    	$input = $req->all();
+    	$input['file'] = time().'.'.$req->file->getClientOriginalExtension();
+    	$req->file->move(public_path('files'), $input['file']);
+    	$f = new File;
+    	$f->path = $input['file'];
+    	$f->save();
+		return response()->json(['id'=>$f->id]);
+    }
 }

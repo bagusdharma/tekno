@@ -19,7 +19,9 @@
             User Settings<i class="dropdown icon"></i>
             <div class="menu">
                 <a class="item">Edit Profile</a>
+                @role('personal')
                 <a class="item">Printing Progress</a>
+                @endrole
                 <div class="divider"></div>
                 <a class="item" href="{{ route('logout') }}" onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();">
@@ -41,12 +43,5 @@
             </div>
         </div>
         @endguest
-        {{-- <div class="ui right floated item">
-            <div class="ui icon input">
-                <input class="prompt" type="text" placeholder="AA">
-                <i class="search icon"></i>
-            </div>
-            <div class="results"></div>
-        </div> --}}
     </div>
 </div>

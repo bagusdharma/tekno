@@ -127,7 +127,12 @@
                 <div class="column">
                 </div>
                 <div class="column">
-                    <button type="button" class="ui centered button" onclick="lala();">Upload Image</button>
+                    <button type="button" class="ui button" onclick="lala();">Upload Image</button>
+                    @role('printing')
+                    <br>
+                    <br>
+                    <a href="{{ route('harga.index') }}"><input type="button" value="Update Harga" class="ui green button"></a>
+                    @endrole('printing')
                 </div>
             </div>
         </div>

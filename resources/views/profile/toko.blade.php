@@ -28,7 +28,7 @@
             <div class="content">
                 <h2 class="ui header">Harga</h2>
             </div>
-            <table class="ui celled table">
+            <table class="ui striped celled table">
                 <thead>
                     <tr>
                         <th>Ukuran</th>
@@ -37,26 +37,13 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach($lists as $list)
                     <tr>
-                        <td>A1</th>
-                        <td>Rp 3500,-</td>
-                        <td>Rp 2500,-</td>
+                        <td>{{ $list->ukuran }}</th>
+                        <td>Rp {{ $list->berwarna }},-</td>
+                        <td>Rp {{ $list->bnw }},-</td>
                     </tr>
-                    <tr>
-                        <td>A2</th>
-                        <td>Rp 2000,-</td>
-                        <td>Rp 1500,-</td>
-                    </tr>
-                    <tr>
-                        <td>A3</th>
-                        <td>Rp 1000,-</td>
-                        <td>Rp 750,-</td>
-                    </tr>
-                    <tr>
-                        <td>A4</th>
-                        <td>Rp 500,-</td>
-                        <td>Rp 300,-</td>
-                    </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>
@@ -74,7 +61,7 @@
                         <div class="meta"><i class="star icon"></i><i class="star icon"></i><i class="star icon"></i><i
                                 class="star icon"></i><i class="star icon"></i></div>
                         <div class="description">
-                            Hasilnya mantap! Saya suka dengan Andy Printing!
+                            Hasilnya mantap! Saya suka dengan {{ $user['name'] }}!
                         </div>
                     </div>
                 </div>
@@ -84,7 +71,7 @@
                         <div class="meta"><i class="star icon"></i><i class="star icon"></i><i class="star icon"></i><i
                                 class="star icon"></i></div>
                         <div class="description">
-                            Andy Printing penjaganya cakep, jadi suka deh ke situ! Kalo ga bisa ke Andy Printing, bisa
+                            {{ $user['name'] }} penjaganya cakep, jadi suka deh ke situ! Kalo ga bisa ke {{ $user['name'] }}, bisa
                             pesan online juga hehehehe.
                         </div>
                     </div>
@@ -108,144 +95,17 @@
     <div class="column">
     </div>
     <div class="column">
-        <a href=" {{route('order.index')}} "><input type="submit" class="ui green button" value="Order Now" tabindex="0"></a>
+        <a href=" {{route('order.show', $user['id'])}} "><input type="submit" class="ui green button" value="Order Now" tabindex="0"></a>
     </div>
     <div class="column">
     </div>
 </div>
 @endrole
 
-<style type="text/css">
-    .slider {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-    }
-
-    .slides {
-        height: 100%;
-        overflow: hidden;
-        *zoom: 1;
-        -webkit-backface-visibility: hidden;
-        -webkit-transform-style: preserve-3d;
-    }
-
-    .slide-item {
-        height: 100%;
-        float: left;
-        clear: none;
-    }
-
-    .slider-arrow {
-        position: absolute;
-        display: block;
-        margin-bottom: -20px;
-        padding: 20px;
-    }
-
-    .slider-arrow--right {
-        bottom: 50%;
-        right: 30px;
-    }
-
-    .slider-arrow--left {
-        bottom: 50%;
-        left: 30px;
-    }
-
-    .slider-nav {
-        position: absolute;
-        bottom: 60px;
-    }
-
-    .slider-nav__item {
-        width: 12px;
-        height: 12px;
-        float: left;
-        clear: none;
-        display: block;
-        margin: 0 5px;
-        background: #fff;
-    }
-
-    .slider-nav__item:hover {
-        background: #ccc;
-    }
-
-    .slider-nav__item--current {
-        background: #ccc;
-    }
-
-    /* unique slider css */
-    .slider-nav__item {
-        border-radius: 50%;
-    }
-
-    .slider-arrow--right,
-    .slider-arrow--left {
-        background-image: url('/img/glide-arrows.png');
-        background-repeat: no-repeat;
-        width: 17px;
-        height: 28px;
-        display: block;
-        padding: 0;
-    }
-
-    .slider-arrow--right {
-        background-position: -17px 0;
-    }
-
-    .slider-arrow--left {}
-
-    /* home page slider - start */
-    .slider1 .slide-item {
-        height: 100%;
-        width: 100%;
-        background-position: center;
-        background-size: cover;
-    }
-
-    .slider1 .item1 {
-        background: url("/img/slide1.jpg") no-repeat center;
-    }
-
-    .slider1 .item2 {
-        background: url("/img/slide2.jpg") no-repeat center;
-    }
-
-    .slider1 {
-        color: #fff;
-    }
-
-    .slider1 .content {
-        margin-top: 37%;
-        margin-bottom: 20%;
-    }
-
-    .slider1 h2 {
-        font-family: 'lobster', sans-serif;
-        font-size: 5em;
-        font-weight: 200;
-        margin-bottom: 1.2em;
-        text-shadow: 0 .05em .05em #c25b1d !important;
-    }
-
-    .slider1 .note {
-        max-height: 5em;
-        min-height: 5em;
-        max-width: 5em;
-        min-width: 5em;
-        display: inline !important;
-    }
-</style>
-<script src="http://cdn.jsdelivr.net/jquery.glide/1.0.6/jquery.glide.min.js"></script>
 <script>
     $(document).ready(function () {
-        // console.log("HAHA");
-        $('.slider').glide({
-            autoplay: false,
-            arrowsWrapperClass: 'slider-arrows',
+        $('.main.menu  .ui.dropdown').dropdown({
+                on: 'hover'
         });
     });
 </script>

@@ -37,9 +37,18 @@ Route::get('/upgrade', 'ProfileController@upgrade')->name('upgradeProfile');
 Route::post('/upgrade', 'ProfileController@upgrade');
 Route::patch('/profile/{user}/update', ['as' => 'updateProfile', 'uses' => 'ProfileController@update']);
 
-// Profile printing only
+// Printing Things
 Route::resource('/printing', 'ProfileController');
+Route::resource('/harga', 'ListHargaController');
+Route::get('/addharga', 'ListHargaController@addHarga');
+Route::get('/delete/{id}', 'ListHargaController@hapus')->name('harga.hapus');
+Route::post('/addharga', 'ListHargaController@addHarga');
 
 Route::get('messages', 'ChatsController@fetchMessages');
 Route::post('messages', 'ChatsController@sendMessage');
+
+//Upfile
+Route::post('/up', 'FileController@post')->name('file.up');
+
+// Order
 Route::resource('/order', 'OrderController');

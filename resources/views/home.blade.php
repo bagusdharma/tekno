@@ -26,28 +26,6 @@
         </div>
         @endforeach
 
-{{--         <div class="ui column">
-            <div class="ui segment item">
-                <div class="ui item">
-                    <div class="ui image">
-                        <img src="/img/print1.jpg">
-                    </div>
-                    <div class="ui divider"></div>
-                    <div class="content">
-                        <h2 class="ui header">Lutfi Printing
-                            <div class="sub header">
-                                <b>Lutfi Printing</b> Merupakan cabang dari PrintKu Digital Printing. DIbuka pada awal tahun ini, Lutfi Printing tidak kalah dengan printing-printing lainnya.<br><br>
-                                Lokasi di <b>dekat SAC ITS</b>
-                            </div>
-                        </h2>
-                        <a href="{{ route('printing.show', 0) }}"><div class="ui blue right floated button">
-                            See Printing Profile
-                        </div></a>
-                    </div>
-                </div>
-            </div>
-        </div> --}}
-
     </div>
 
     <div class="one column row">

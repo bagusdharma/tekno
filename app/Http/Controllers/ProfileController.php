@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\ListHarga;
 use jeremykenedy\LaravelRoles\Models\Role;
 
 class ProfileController extends Controller
@@ -53,7 +54,8 @@ class ProfileController extends Controller
     public function show($id)
     {
         $user = User::find($id)->toArray();
-        return view('profile.toko')->with('user', $user);
+        $lh = ListHarga::where('toko', $id)->get();
+        return view('profile.toko')->with('user', $user)->with('lists', $lh);
     }
 
     /**
