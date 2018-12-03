@@ -17,6 +17,8 @@ class AddedColumnForUserTable extends Migration
             $table->text('description')->nullable();
             $table->string('alamat')->nullable();
             $table->string('kecamatan', 3)->nullable();
+            $table->string('v_location')->nullable();
+            $table->string('gmaps_location')->nullable();
         });
     }
 
