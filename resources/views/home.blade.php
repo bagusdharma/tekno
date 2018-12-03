@@ -28,7 +28,7 @@
             <div class="ui segment item">
                 <div class="ui item">
                     <div class="ui image">
-                        <img src="/img/print1.jpg">
+                        <img src="/img/print2.jpg">
                     </div>
                     <div class="ui divider"></div>
                     <div class="content">
@@ -49,7 +49,7 @@
             <div class="ui segment item">
                 <div class="ui item">
                     <div class="ui image">
-                        <img src="/img/print1.jpg">
+                        <img src="/img/print7.jpg">
                     </div>
                     <div class="ui divider"></div>
                     <div class="content">
@@ -72,7 +72,7 @@
             <div class="ui segment item">
                 <div class="ui item">
                     <div class="ui image">
-                        <img src="/img/print1.jpg">
+                        <img src="/img/print4.jpg">
                     </div>
                     <div class="ui divider"></div>
                     <div class="content">
@@ -93,7 +93,7 @@
             <div class="ui segment item">
                 <div class="ui item">
                     <div class="ui image">
-                        <img src="/img/print1.jpg">
+                        <img src="/img/print5.jpg">
                     </div>
                     <div class="ui divider"></div>
                     <div class="content">
@@ -114,7 +114,7 @@
             <div class="ui segment item">
                 <div class="ui item">
                     <div class="ui image">
-                        <img src="/img/print1.jpg">
+                        <img src="/img/print6.jpg">
                     </div>
                     <div class="ui divider"></div>
                     <div class="content">

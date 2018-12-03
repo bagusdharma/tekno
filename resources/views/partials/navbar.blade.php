@@ -1,7 +1,7 @@
 <div class="ui fixed inverted borderless main menu">
     <div class="ui container">
     	<a href="{{ route('home') }}" class="header item">
-    		<img class="logo" src="/img/logo.jpg">SBY-PC
+    		<img class="logo" src="/img/lembar2.jpg">Lembar Surabaya
     	</a>
         @auth
     	<a href="{{ route('showProfile') }}" class="item">Profile</a>
