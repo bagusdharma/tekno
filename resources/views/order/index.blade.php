@@ -13,6 +13,17 @@
                 </div>
             </div>
             <div class="required field">
+                <label>Jenis Layanan</label>
+                <div class="six wide field">
+                    <select name="layanan" class="ui search dropdown" id="kertas">
+                        <option value="">Pilih Jenis Layanan</option>
+                        <option value="print">Print</option>
+                        <option value="jilid">Penjilidan</option>
+                        <option value="printcopy">Print Copy</option>
+                    </select>
+                </div>
+            </div>
+            <div class="required field">
                 <label>Jenis Kertas</label>
                 <div class="six wide field">
                     <select name="kertas" class="ui search dropdown" id="kertas">
@@ -29,7 +40,7 @@
             <div class="required field">
                 <label>Jenis Pengambilan</label>
                 <div class="six wide field">
-                    <select name="kertas" class="ui search dropdown" id="kertas">
+                    <select name="pengambilan" class="ui search dropdown" id="kertas">
                         <option value="">Pilih Jenis Pengambilan </option>
                         <option value="pickup">Ambil Langsung</option>
                         <option value="delivery">Delivery</option>

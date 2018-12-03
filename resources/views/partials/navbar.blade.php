@@ -1,4 +1,4 @@
-<div class="ui fixed inverted borderless main menu">
+<div class="ui fixed borderless main menu">
     <div class="ui container">
     	<a href="{{ route('home') }}" class="header item">
     		<img class="logo" src="/img/lembar2.jpg">Lembar Surabaya
