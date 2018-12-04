@@ -3,8 +3,8 @@
 @section('content')
     <div class="column">
         <h2 class="ui teal image header">
-            <img src="/img/logo.jpg" class="image">
-            <div class="content">Log-in to SBY-PC</div>
+            <img src="/img/lembar2.jpg" class="image">
+            <div class="content">Log-in to Lembar</div>
         </h2>
         <form class="ui large form" method="POST" action="{{ route('login') }}">
             @csrf
