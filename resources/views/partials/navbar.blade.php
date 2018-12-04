@@ -37,22 +37,3 @@
         @endguest
     </div>
 </div>
-
-{{-- 
-<div class="ui modal" id="chats">
-    <div class="header">Messages</div>
-    <div class="content">
-        <div class="scrolling content">a</div>
-        <div class="description">
-            <div class="scrolling content">b</div>
-        </div>
-    </div>
-</div>
-
-<script>
-    $('#chats').modal();
-    const showChats = () =>{
-        $('#chats').modal('show');
-    }
-</script>
- --}}

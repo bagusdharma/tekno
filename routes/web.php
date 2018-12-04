@@ -52,3 +52,5 @@ Route::post('/up', 'FileController@post')->name('file.up');
 
 // Order
 Route::resource('/order', 'OrderController');
+
+Route::resource('/chat', 'ChatController');
