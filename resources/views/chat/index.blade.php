@@ -12,7 +12,7 @@
 		</thead>
 		<tbody>
 			<tr class="center aligned">
-				<td>Jony skidipapap</td>
+				<td>Toko Aditya</td>
 				<td><a href="chat/0"><div class="ui button">Lihat</div></a></td>
 			</tr>
 		</tbody>
