@@ -30,4 +30,19 @@ class HomeController extends Controller
 
         return view('home')->with('printings', $users);
     }
+
+    public function aboutus()
+    {
+        return view('aboutus');
+    }
+
+    public function ornigram()
+    {
+        return view('ornigram');
+    }
+
+    public function privasi()
+    {
+        return view('privasi');
+    }
 }

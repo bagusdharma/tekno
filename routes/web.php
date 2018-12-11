@@ -54,3 +54,7 @@ Route::post('/up', 'FileController@post')->name('file.up');
 Route::resource('/order', 'OrderController');
 
 Route::resource('/chat', 'ChatController');
+
+Route::get('/aboutus', 'HomeController@aboutus')->name('aboutus');
+Route::get('/ornigram', 'HomeController@ornigram')->name('ornigram');
+Route::get('/kebijakan-privasi', 'HomeController@privasi')->name('privasi');

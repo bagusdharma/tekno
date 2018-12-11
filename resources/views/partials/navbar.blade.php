@@ -3,8 +3,15 @@
     	<a href="{{ route('home') }}" class="header item">
     		<img class="logo" src="/img/lembar2.jpg">Lembar Surabaya
     	</a>
+        <div class="ui floated dropdown item">Lainnya <i class="dropdown icon"></i>
+        <div class="menu">
+            <a href=" {{ route('aboutus') }} " class="item">Tentang Kami</a>
+            <a href=" {{ route('ornigram') }} " class="item">Organigram</a>
+            <a href=" {{ route('privasi') }} " class="item">Kebijakan Privasi</a>
+        </div>
+        </div>
         @auth
-    	<a href="alamatchat ntar ae cuk aku berangkat sby dulu" class="item">Messages</a>
+    	<a href=" {{ route('chat.index') }} " class="item">Messages</a>
         @endauth
         @auth
         <div class="ui right floated dropdown item">
